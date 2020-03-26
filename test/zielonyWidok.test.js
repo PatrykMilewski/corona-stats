@@ -1,3 +1,6 @@
+
+const handler = require('../src/zielonyWidok').handler
+
 afterEach(() => {
     jest.clearAllMocks()
 })
@@ -5,7 +8,8 @@ afterEach(() => {
 describe('test', () => {
 
     it('valid event is published successfully', async () => {
-        await handler()
+        const response = await handler()
+        expect(response.statusCode).toEqual(200)
     })
 
 })

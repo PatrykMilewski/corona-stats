@@ -35,9 +35,9 @@ provider:
 
 functions:
 
-  browserChecker:
-    handler: src/handler.handler
-    name: ${self:custom.baseName}-browserChecker
+  zielonyWidok:
+    handler: src/zielonyWidok.handler
+    name: ${self:custom.baseName}-zielonyWidok
     events:
       - schedule:
           rate: rate(24 hours)

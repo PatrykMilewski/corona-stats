@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "scripts": {
     "deploy": "serverless deploy",
-    "remove": "serverless remove"
+    "remove": "serverless remove",
+    "invoke_local": "serverless invoke local",
+    "test": "jest"
   },
   "license": "ISC",
   "dependencies": {

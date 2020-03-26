@@ -6,7 +6,7 @@ const DOMParser = require('xmldom').DOMParser
 let browser = undefined
 
 module.exports.initializeBrowser = async () => {
-    if (browser !== undefined) {
+    if (browser === undefined) {
         browser = await chromium.puppeteer.launch({
             args: chromium.args,
             defaultViewport: chromium.defaultViewport,
