@@ -1,5 +1,5 @@
 {
-  "name": "gateway",
+  "name": "corona-stats",
   "version": "1.0.0",
   "scripts": {
     "deploy": "serverless deploy",
