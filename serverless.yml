@@ -1,0 +1,44 @@
+service: BrowserChecker
+
+plugins:
+  - serverless-webpack
+  - serverless-plugin-log-retention
+  - serverless-iam-roles-per-function
+  - serverless-plugin-resource-tagging
+
+package:
+  individually: true
+
+custom:
+  project: coronastats
+  baseName: ${self:custom.project}-${self:service}-${opt:stage}
+  logRetentionInDays: 30
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: ${opt:stage}
+  stackName: ${self:custom.baseName}
+  timeout: 30
+  memorySize: 2048
+  deploymentBucket:
+    blockPublicAccess: true
+
+  stackTags:
+    STACK: "${self:custom.baseName}"
+    PROJECT: "${self:custom.project}"
+    COMPONENT: "${self:service}"
+
+  environment:
+    AWS_NODEJS_CONNECTION_REUSE_ENABLED: 1
+    DEBUG: false
+
+functions:
+
+  browserChecker:
+    handler: src/handler.handler
+    name: ${self:custom.baseName}-browserChecker
+    events:
+      - schedule:
+          rate: rate(24 hours)
+          enabled: true

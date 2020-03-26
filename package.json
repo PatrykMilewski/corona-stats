@@ -1,0 +1,28 @@
+{
+  "name": "gateway",
+  "version": "1.0.0",
+  "scripts": {
+    "deploy": "serverless deploy",
+    "remove": "serverless remove"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "chrome-aws-lambda": "2.1.1",
+    "puppeteer-core": "2.1.1",
+    "xmldom": "0.3.0",
+    "xpath": "0.0.27",
+    "source-map-support": "0.5.16",
+    "lambda-log": "2.3.1"
+  },
+  "devDependencies": {
+    "babel-loader": "8.0.6",
+    "jest": "25.1.0",
+    "puppeteer": "2.1.1",
+    "serverless": "1.67.0",
+    "serverless-webpack": "5.3.1",
+    "serverless-plugin-log-retention": "2.0.0",
+    "serverless-iam-roles-per-function": "2.0.2",
+    "serverless-plugin-resource-tagging": "1.0.11",
+    "webpack": "4.42.0"
+  }
+}
