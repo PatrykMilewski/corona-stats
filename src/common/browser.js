@@ -29,5 +29,11 @@ module.exports.getUrlContent = async (url) => {
     const page = await getPage()
     await page.goto(url)
     const content = await page.content()
-    return new DOMParser().parseFromString(content)
+    return new DOMParser().parseFromString(content, 'text/xml')
+}
+
+module.exports.close = async () => {
+    if (browser !== null) {
+        await browser.close();
+    }
 }
