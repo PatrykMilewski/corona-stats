@@ -29,15 +29,15 @@ const getData = async () => {
 	const select = xpath.useNamespaces({
 		xmlns: 'http://www.w3.org/1999/xhtml'
 	})
-	const newEnterprisesNode = select(newEnterprisesXPath, pageDom).toString()
-	const resumedEnterprisesNode = select(resumedEnterprisesXPath, pageDom).toString()
-	const suspendedEnterprisesNode = select(suspendedEnterprisesXPath, pageDom).toString()
-	const closedEnterprisesNode = select(closedEnterprisesXPath, pageDom).toString()
+	const newEnterprisesText = select(newEnterprisesXPath, pageDom).toString()
+	const resumedEnterprisesText = select(resumedEnterprisesXPath, pageDom).toString()
+	const suspendedEnterprisesText = select(suspendedEnterprisesXPath, pageDom).toString()
+	const closedEnterprisesText = select(closedEnterprisesXPath, pageDom).toString()
 
 	return {
-		newEnterprises: parseInt(newEnterprisesNode),
-		resumedEnterprises: parseInt(resumedEnterprisesNode),
-		suspendedEnterprises: parseInt(suspendedEnterprisesNode),
-		closedEnterprises: parseInt(closedEnterprisesNode),
+		newEnterprisesCount: parseInt(newEnterprisesText),
+		resumedEnterprisesCount: parseInt(resumedEnterprisesText),
+		suspendedEnterprisesCount: parseInt(suspendedEnterprisesText),
+		closedEnterprisesCount: parseInt(closedEnterprisesText),
 	}
 }
