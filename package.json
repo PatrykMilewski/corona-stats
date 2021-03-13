@@ -11,7 +11,7 @@
   "dependencies": {
     "chrome-aws-lambda": "2.1.1",
     "puppeteer-core": "2.1.1",
-    "xmldom": "0.3.0",
+    "xmldom": "0.5.0",
     "xpath": "0.0.27",
     "source-map-support": "0.5.16",
     "lambda-log": "2.3.1"
